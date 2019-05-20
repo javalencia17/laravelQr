@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/Registrar','CustomerController@actionIndex');
+Route::get('/Asignar','CustomerController@actionAsignar');
+Route::get('/customer/modalCustomer','CustomerController@actionModalCustomer');
+Route::get('/customer/cargarTabla','CustomerController@actionCargarTabla');
+Route::post('/customer/GuardarCustomer','CustomerController@actionGuardarCustomer');
+
+
+
+
+
+

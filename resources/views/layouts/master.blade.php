@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="base_url" content="{{ url('/') }}">
+
 
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -15,6 +16,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.js') }}" defer></script>
+    <script src="{{ asset('assets/datatable/dataTables.min.js') }}" defer></script>
+    <script src="{{ asset('js/js_customer/customer.js') }}" defer></script>
+
+
+
          
 
 
@@ -25,6 +31,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/datatable/dataTables.min.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -33,7 +41,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Proyecto Qr
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,8 +50,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a href="#">Registrar</a></li>
-                        <li><a href="#">Asignar</a></li>
+                        <li><a href="{{ url('/Registrar') }}">Registrar</a></li>
+                        <li><a href="{{ url('/Asignar') }}">Asignar</a></li>
                         <li><a href="#">Consultar</a></li>
 
                     </ul>
@@ -57,6 +65,15 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+            @yield('modals')
+
     </div>
 </body>
 </html>
+
+@yield('scripts')
+
+
+
+
